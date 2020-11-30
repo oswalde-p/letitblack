@@ -1,0 +1,67 @@
+# Letitblack
+# by jason
+#
+# Based on Slick - Letitblue by Johannes Voggenthaler
+# Platform: 320x240 (Ipod Video)
+# Version: 1
+# Licensed CC-BY-SA 3.0
+# Last updated: May 13 2020
+
+%wd
+%X(wpsbd.bmp)0%|0%|
+%xl(A,playbackstatus.bmp,0,0,3)
+%xl(B,battery.bmp,0,0,4)
+%xl(D,repeat.bmp,0,0,4)
+%xl(E,shuffle.bmp,0,0)
+%xl(F,hold.bmp,0,0)
+%Cl(0,0,100,100,c,c)
+
+# Fonts
+%Fl(2,21-Adobe-Helvetica.fnt)
+%Fl(3,16-Adobe-Helvetica.fnt)
+
+# Playback Status Viewport
+%V(12,5,16,18,-)%Vf(ffffff)%Vb(000000)
+%?mp<||%xd(Aa)|%xd(Ab)|%xd(Ac)>
+
+# Battery Status Viewport
+%V(281,7,25,12,-)%Vf(ffffff)%Vb(000000)
+%?bl<||%xd(Bd)|%xd(Bc)|%xd(Bb)|%xd(Ba)>
+
+# Album Art Viewport
+%V(10,35,155,155,-)
+%Cl(0,0,155,155)
+%?C<%Cd|>
+
+# Track Name Viewport
+%V(175,82,145,26,2)%Vf(ffffff)%Vb(000000)
+%s%al%?it<%it|%fn>
+
+# Artist + Album Viewport
+%V(175,108,145,40,3)%Vf(ffffff)%Vb(000000)
+%s%al%?ia<%ia|%?d(2)<%d(2)|%(root%)>>
+%s%al%?id<%id|%?d(1)<%d(1)|%(root%)>>
+
+# Track num Viewport
+%V(18,192,145,20,3)%Vf(ffffff)%Vb(000000)
+%ac%pp of %pe
+
+# Playback Time & Track Nr. Viewport
+%V(175,192,145,20,3)%Vf(ffffff)%Vb(000000)
+%ar%pc / %pt
+
+# Volume Viewport
+%V(33,218,50,22,-)%Vf(ffffff)%Vb(000000)
+%pvdB
+
+# Repeat Mode Viewport
+%V(247,219,26,21,-)%Vf(ffffff)%Vb(000000)
+%?mm<|%xd(Da)|%xd(Db)|%xd(Dc)|%xd(Dd)>
+
+# Shuffle Mode Viewport
+%V(277,219,14,21,-)%Vf(ffffff)%Vb(000000)
+%?ps<%xd(E)|>
+
+# Hold Status Viewport
+%V(298,219,10,21,-)%Vf(ffffff)%Vb(000000)
+%?mh<%xd(F)|>
